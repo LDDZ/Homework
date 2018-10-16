@@ -1,0 +1,39 @@
+body{
+    text-align: center;
+    color: red;
+}
+span{
+    font:80px "微软雅黑";
+    position: relative;
+}
+.left{
+    margin-right: 100px;
+}
+span:before,span:after{
+    content:attr(data-q);
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform-origin: top center;
+    transition:all 0.5s ease 0s;
+}
+span:before{
+    color:gold;
+    z-index: 3;
+    transform:rotateX(15deg);
+}
+span:after{
+    color:rgba(0,0,0,0.3);
+    z-index:2;
+    transform: rotateX(0deg) scale(1.1, 1);
+}
+span:hover:before{
+    transform:rotateX(90deg) skew(0deg, 3deg);
+}
+span:hover:after{
+    transform:rotateX(80deg) skew(0deg,20deg);
+}
+.return{
+    text-decoration: none;
+    font: 20px "微软雅黑";
+}
