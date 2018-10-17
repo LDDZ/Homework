@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-cmn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>animation动画</title>
+    <style>
+    body, ul, li{
+        margin: 0;
+        padding: 0;
+    }
+    ul{list-style: none;}
+    img{display: block;}
+    .view-box{
+        width: 680px;
+        height: 320px;
+        padding: 5px;
+        margin: 100px auto;
+        border: 1px solid #ccc;
+        background-color: #f2f2f2;
+        border-radius: 5px;
+    }
+    .view-box ul {
+		width: 100%;
+		height: 100%;
+		position: relative;
+		overflow: hidden;
+	}
+    .view-box li {
+		position: absolute;
+		left: -685px;
+	}
+    .view-box li:first-child {top: 0;}
+    .view-box li:nth-child(1) {animation: cycle 20s linear infinite;}
+	.view-box li:nth-child(2) {animation: cycletwo 20s linear infinite;}
+	.view-box li:nth-child(3) {animation: cyclethree 20s linear infinite;}
+	.view-box li:nth-child(4) {animation: cyclefour 20s linear infinite;}
+	.view-box li:nth-child(5) {animation: cyclefive 20s linear infinite;}
+	@keyframes cycle {
+		0%  {left: 0px;}
+		4%  {left: 0px;}
+		16% {left: 0px; opacity: 1; z-index: 0;} 
+		20% {left: 685px; opacity: 0; z-index: 0;}
+		21% {left: -685px; opacity: 0; z-index: -1;}
+		50% {left: -685px; opacity: 0; z-index: -1;}
+		92% {left: -685px; opacity: 0; z-index: 0;}
+		96% {left: -685px; opacity: 0;}
+		100%{left: 0px; opacity: 1;}
+	}
+	@keyframes cycletwo {
+		0%  {left: -685px; opacity: 0;}
+		16% {left: -685px; opacity: 0;}
+		20% {left: 0px; opacity: 1;}
+		24% {left: 0px; opacity: 1;} 
+		36% {left: 0px; opacity: 1; z-index: 0;} 
+		40% {left: 685px; opacity: 0; z-index: 0;}
+		41% {left: -685px; opacity: 0; z-index: -1;}  
+		100%{left: -685px; opacity: 0; z-index: -1;}
+	}
+	@keyframes cyclethree {
+		0%  {left: -685px; opacity: 0;}
+		36% {left: -685px; opacity: 0;}
+		40% {left: 0px; opacity: 1;}
+		44% {left: 0px; opacity: 1;} 
+		56% {left: 0px; opacity: 1; z-index: 0;} 
+		60% {left: 685px; opacity: 0; z-index: 0;} 
+		61% {left: -685px; opacity: 0; z-index: -1;}
+		100%{left: -685px; opacity: 0; z-index: -1;}
+	}
+	@keyframes cyclefour {
+		0%  {left: -685px; opacity: 0;}
+		56% {left: -685px; opacity: 0;}
+		60% {left: 0px; opacity: 1;}
+		64% {left: 0px; opacity: 1;}
+		76% {left: 0px; opacity: 1; z-index: 0;}
+		80% {left: 685px; opacity: 0; z-index: 0;}
+		81% {left: -685px; opacity: 0; z-index: -1;}
+		100%{left: -685px; opacity: 0; z-index: -1;}
+	}
+	@keyframes cyclefive {
+		0%  { left:-685px; opacity:0; }
+		76% { left:-685px; opacity:0; }
+		80% { left:0px; opacity:1; }
+		84% { left:0px; opacity:1; }
+		96% { left:0px; opacity:1; z-index:0; }
+		100%{ left:685px; opacity:0; z-index:0; }
+	}
+    </style>
+</head>
+<body>
+    <div class="view-box">
+		<ul>
+			<li><img src="./images/img_1.jpg" alt=""></li>
+			<li><img src="./images/img_2.jpg" alt=""></li>
+			<li><img src="./images/img_3.jpg" alt=""></li>
+			<li><img src="./images/img_4.jpg" alt=""></li>
+			<li><img src="./images/img_5.jpg" alt=""></li>
+		</ul>
+	</div>
+	<div><a href="../index.html">返回主页</a></div>
+</body>
+</html>
