@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="zh-cmn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>PureCSS3CycleSlider</title>
+    <style>
+    body, ul, li{
+        margin: 0;
+        padding: 0;
+        background-image: url(images/b.png);
+    }
+    ul{list-style: none;}
+    img{display: block;}
+    h1{
+        font-size: 50px;
+        text-align: center;
+        margin: 100px auto;
+    }
+    .view-box{
+        width: 680px;
+        height: 320px;
+        padding: 5px;
+        margin: 100px auto;
+        border: 1px solid #ccc;
+        background-color: #f2f2f2;
+        border-radius: 5px;
+    }
+    .view-box ul {
+		width: 100%;
+		height: 100%;
+		position: relative;
+		overflow: hidden;
+	}
+    .view-box li {
+		position: absolute;
+		left: -685px;
+	}
+    .view-box li:first-child {top: 0;}
+    .view-box li:nth-child(1) {animation: cycle 20s linear infinite;}
+	.view-box li:nth-child(2) {animation: cycletwo 20s linear infinite;}
+	.view-box li:nth-child(3) {animation: cyclethree 20s linear infinite;}
+	.view-box li:nth-child(4) {animation: cyclefour 20s linear infinite;}
+	.view-box li:nth-child(5) {animation: cyclefive 20s linear infinite;}
+	@keyframes cycle {
+		0%  {left: 0px;}
+		4%  {left: 0px;}
+		16% {left: 0px; opacity: 1; z-index: 0;} 
+		20% {left: 685px; opacity: 0; z-index: 0;}
+		21% {left: -685px; opacity: 0; z-index: -1;}
+		50% {left: -685px; opacity: 0; z-index: -1;}
+		92% {left: -685px; opacity: 0; z-index: 0;}
+		96% {left: -685px; opacity: 0;}
+		100%{left: 0px; opacity: 1;}
+	}
+	@keyframes cycletwo {
+		0%  {left: -685px; opacity: 0;}
+		16% {left: -685px; opacity: 0;}
+		20% {left: 0px; opacity: 1;}
+		24% {left: 0px; opacity: 1;} 
+		36% {left: 0px; opacity: 1; z-index: 0;} 
+		40% {left: 685px; opacity: 0; z-index: 0;}
+		41% {left: -685px; opacity: 0; z-index: -1;}  
+		100%{left: -685px; opacity: 0; z-index: -1;}
+	}
+	@keyframes cyclethree {
+		0%  {left: -685px; opacity: 0;}
+		36% {left: -685px; opacity: 0;}
+		40% {left: 0px; opacity: 1;}
+		44% {left: 0px; opacity: 1;} 
+		56% {left: 0px; opacity: 1; z-index: 0;} 
+		60% {left: 685px; opacity: 0; z-index: 0;} 
+		61% {left: -685px; opacity: 0; z-index: -1;}
+		100%{left: -685px; opacity: 0; z-index: -1;}
+	}
+	@keyframes cyclefour {
+		0%  {left: -685px; opacity: 0;}
+		56% {left: -685px; opacity: 0;}
+		60% {left: 0px; opacity: 1;}
+		64% {left: 0px; opacity: 1;}
+		76% {left: 0px; opacity: 1; z-index: 0;}
+		80% {left: 685px; opacity: 0; z-index: 0;}
+		81% {left: -685px; opacity: 0; z-index: -1;}
+		100%{left: -685px; opacity: 0; z-index: -1;}
+	}
+	@keyframes cyclefive {
+		0%  { left:-685px; opacity:0; }
+		76% { left:-685px; opacity:0; }
+		80% { left:0px; opacity:1; }
+		84% { left:0px; opacity:1; }
+		96% { left:0px; opacity:1; z-index:0; }
+		100%{ left:685px; opacity:0; z-index:0; }
+    }
+    .progress-bar {
+    position: relative;
+    top: -5px;
+    width: 680px;
+    height: 5px;
+    background: #000;
+    -moz-animation: fullexpand 20s ease-out infinite;
+    -webkit-animation: fullexpand 20s ease-out infinite;
+}
+@keyframes fullexpand{
+    0%{width: 0%; opacity: 0.1;}
+    30%{width: 30%; opacity: 0.3;}
+    60%{width: 60%; opacity: 0.6;}
+    90%{width: 90%; opacity: 0.8;}
+    100%{width: 100%; opacity: 0.9;}
+}
+.tooltip {
+    margin-top: 0;
+    margin-bottom: 0;
+    background: rgba(155, 53, 53, 0.7);
+    width: 300px;
+    height: 60px;
+    /* position: relative; */
+    bottom: 20px;
+    left: -320px;
+    -moz-transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+}
+.tooltip h1 {
+    margin-top: 0;
+    margin-bottom: 0;
+    text-align: center;
+    color: #fff;
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 60px;
+    padding: 0 0 0 20px;
+}
+div:hover .tooltip{
+    position: absolute;
+    left: 0px;
+}
+.return{
+    text-decoration: none;
+    font: 20px "微软雅黑";
+}
+</style>
+</head>
+<body>
+    <div><h1>Pure CSS3 Cycle Slider</h1></div>
+    <div class="view-box">
+        <ul>
+            <li>
+                <img src="./images/img_1.jpg" alt="">
+                <div class="tooltip">
+                    <h1>Cougar</h1>
+                </div>
+            </li>
+            <li>
+                <img src="./images/img_2.jpg" alt="">
+                <div class="tooltip">
+                    <h1>Lions</h1>
+                </div>
+            </li>
+            <li>
+                <img src="./images/img_3.jpg" alt="">
+                <div class="tooltip">
+                    <h1>Snowalker</h1>
+                </div>
+            </li>
+            <li>
+                <img src="./images/img_4.jpg" alt="">
+                <div class="tooltip">
+                    <h1>Howling</h1>
+                </div>
+            </li>
+            <li>
+                <img src="./images/img_5.jpg" alt="">
+                <div class="tooltip">
+                    <h1>Sunbathing</h1>
+                </div>
+            </li>
+        </ul>
+        <div class="progress-bar"></div>
+    </div>
+    <div><a  class="return" href="../index.html">返回主页</a></div>
+</body>
+</html>
