@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-cmn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HtmlForm(表单2)</title>
+    <style>
+    body{ font-size:20px; font-family:"微软雅黑";}
+    form{
+        width: 400px;
+        height: 160px;
+        margin: 0 auto;
+        background: gold;
+        border: 5px solid fuchsia;
+        border-radius: 20px;
+    }
+    p{
+        text-align: center;
+    }
+    .num,.pass{
+	width:152px;                                      
+	height:18px;                                 
+	border:1px solid #38a1bf;
+    padding:2px 2px 2px 22px; 
+    } 
+    .num{
+	background:url(images/1.jpg) no-repeat 5px center #FFF;
+	color:#999;
+    }                     
+   .pass{                                                  
+    background:url(images/2.jpg) no-repeat 5px center #FFF;
+    }
+    .btn01,.btn02{
+	width:60px; 
+	height:25px; 
+	border-radius:3px;
+	border:1px solid darkcyan; 
+	margin-left:30px;
+	}
+    .btn01{ background:darkgoldenrod}
+    .btn02{ background:greenyellow;}
+    </style>
+</head>
+<body>
+    <form action="#" method="post">	
+        <p>
+            <span>账号：</span>
+            <input type="text" name="username" value="admin" class="num" pattern="^[a-zA-Z][a-zA-Z0-9_]{4,15}$" />
+        </p>
+        <p>
+             <span>密码：</span>
+             <input type="password" name="pwd" class="pass" pattern="^[a-zA-Z]\w{5,17}$"/>
+        </p>
+        <p>
+            <input type="button" class="btn01" value="登录"/>
+            <input type="button" class="btn02" value="注册"/>
+       </p>
+    </form>
+    <p><a href="../index.html">返回主页</a></p>
+</body>
+</html>
