@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="zh-cmn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ResponsiveLayout_2响应式设计_外链式媒体查询</title>
+    <!--适口标签获取实际的设备宽度-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" id="viewport">
+	<!--媒体监测到设备宽度后，使用不同的CSS实现不同宽度的屏幕使用不同的CSS 响应式-->
+	<link rel="stylesheet" href="green.css" media="(max-width:500px)">
+	<link rel="stylesheet" href="hotpink.css" media="(min-width:501px) and (max-width:720px)">
+	<link rel="stylesheet" href="tomato.css" media="(min-width:721px)">
+</head>
+<body>
+    <p>外链式媒体查询</p><br>
+	<a href="../index.html">返回主页</a>
+</body>
+</html>
