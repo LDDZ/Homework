@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-cmn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>流式布局结合弹性布局（弹性盒子）</title>
+    <style>
+    body{
+        margin: 0;
+        padding: 0;
+    }
+    .content{
+        width: 90%;
+        /* height: 500px; */
+        background: #f7f7f7;
+        margin: 100px auto;
+        padding: 10px;
+        display: flex;
+        justify-content:space-around;
+        align-content:space-around; 
+        flex-wrap: wrap;
+    }
+    .card{
+        width: 31%;
+        min-width: 200px;
+        height: auto;
+        margin-bottom: 25px;
+        float: left;
+        background: #fff;
+        border: 1px solid red;
+        border-radius: 5px;
+    }
+    img{
+        display: block;
+        margin: 10px auto;
+        width: 90%;
+    }
+    .text{
+        padding-left: 10px;
+    }
+    a{
+        display: block;
+        margin: 0 auto;
+        width: 90%;
+        color: #fff;
+        text-align: center;
+        text-decoration: none;
+        height: 60px;
+        line-height: 60px;
+        background: salmon;
+        margin-bottom: 10px;
+    }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div class="card">
+            <img src="images/download.jpg" alt="">
+            <div class="text">
+                <h3>Hello</h3>
+                <p>World World World World World </p>
+            </div>
+            <a href="#">按钮</a>
+        </div>
+        <div class="card">
+            <img src="images/download.jpg" alt="">
+            <div class="text">
+                <h3>Hello</h3>
+                <p>World World World World World </p>
+            </div>
+            <a href="#">按钮</a>
+        </div>
+        <div class="card">
+            <img src="images/download.jpg" alt="">
+            <div class="text">
+                <h3>Hello</h3>
+                <p>World World World World World </p>
+            </div>
+            <a href="#">按钮</a>
+        </div>
+        <div class="card">
+            <img src="images/download.jpg" alt="">
+            <div class="text">
+                <h3>Hello</h3>
+                <p>World World World World World </p>
+            </div>
+            <a href="#">按钮</a>
+        </div>
+        <div class="card">
+            <img src="images/download.jpg" alt="">
+            <div class="text">
+                <h3>Hello</h3>
+                <p>World World World World World </p>
+            </div>
+            <a href="#">按钮</a>
+        </div>
+        <div class="card">
+            <img src="images/download.jpg" alt="">
+            <div class="text">
+                <h3>Hello</h3>
+                <p>World World World World World </p>
+            </div>
+            <a href="#">按钮</a>
+        </div>
+    </div><br>
+    <a href="../index.html">返回主页</a>
+</body>
+</html>
