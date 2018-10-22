@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="zh-cmn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>电商网页</title>
+    <style>
+    body{
+        margin: 0;
+        padding: 0;
+    }
+    ul{list-style: none;}
+    header{
+        width: 100%;
+        height:40px;
+        background: #333;
+        
+    }
+    .con{
+        margin: 0 auto;
+        width: 60%;
+        display: flex;
+        justify-content:space-between;
+    }
+    .con .left{
+        width:75px;
+        height:40px;
+        margin-top: 10px;
+        background:url(images/logo.png) 0 0 no-repeat;
+    }
+    .con .right a{
+        text-align: center;
+        text-decoration: none;
+        line-height: 40px;
+        color: #999;
+    }
+    .con .right a:hover{
+        color: #fff;
+    }
+    nav{
+	width:100%;
+	height:90px;
+	background: rgba(0,0,0,0.2);
+	z-index: 1000;
+	position: absolute;
+	top:40px;
+	border-bottom: 1px solid #fff;
+}
+nav ul{
+	width:1030px;
+	height:90px;
+	margin:0 auto;
+	position: relative;
+}
+nav ul li{
+	float: left;
+	margin-right: 19%;
+}
+nav ul .left:hover aside{display: block;}
+nav ul .left a{
+	display: block;
+	height:90px;
+	line-height: 90px;
+	font-size: 20px;
+	color:#fff;
+}
+nav ul .left a img{vertical-align: middle;}
+nav ul .left a span{margin:0 10px;}
+aside{
+	display: none;
+	width:380px;
+	height:560px;
+	background: rgba(0,0,0,0.3);
+	position: absolute;
+	left:0;
+	top:90px;
+	z-index: 1500;
+	color:#fff;
+}
+aside span{
+	width:20px;
+	height:14px;
+	background:url(../images/liebiao.png) 0 0 no-repeat;
+	position: absolute;
+	left:50px;
+	top:0;
+}
+aside ol{
+	width:155px;
+	float: left;
+}
+.aside ol li{
+	width:155px;
+	height:25px;
+	line-height: 25px;
+	cursor: pointer;
+	font-family: "宋体";
+}
+aside ol li.con{
+	font-size: 16px;
+	text-indent: 0;
+	font-family: "微软雅黑";
+	padding: 10px 0;
+}
+aside ol li:hover{color:#fff;}
+aside .zuo{margin:35px 0 0 68px;}
+aside .you{margin-top: 35px;}
+aside img{margin:10px 0 0 13px;}
+nav ul .center{margin-top: 32px;}
+nav ul .center input{
+	width:240px;
+	height:30px;
+	border:1px solid #fff;
+	border-radius: 15px; 
+	color:#fff;
+	line-height: 32px;
+	background: rgba(0,0,0,0);
+	padding-left: 30px;
+	box-sizing:border-box;
+	background:url(../images/search.png) no-repeat 3px 3px;
+	outline: none;去掉蓝边
+}
+nav ul .right{
+	margin-top: 32px;
+	width:280px;
+	height:32px;
+	margin-right:0;
+	font-family: "freshskin";
+	text-align: center;
+	line-height: 32px;
+	font-size: 16px;
+} 
+nav ul .right a{
+	display: inline-block;
+	width:32px;
+	height:32px;
+	color:#fff;
+	box-shadow: 0 0 0 1px #fff inset;
+	transition:box-shadow 0.3s ease 0s; 
+	border-radius: 16px; 
+	margin-left: 30px;
+}
+nav ul .right a:hover{
+	box-shadow: 0 0 0 16px #fff inset; 
+	color:#C1DCC5;
+}
+.pic{
+	width:570px;
+	height:210px;
+	position: absolute;
+	left:50%;
+	top:50%;
+	transform:translate(-50%,-50%);
+	background: url(../images/wenzi.png) no-repeat;
+	text-align: center;
+}
+.pic p{
+	margin-top: 240px;
+	color:#4c8174;
+}
+.pic ul{
+	position: absolute;
+	color:#999;
+}
+.pic ul li{
+	width:180px;
+	height:56px;
+	border-radius: 28px;
+	background: #fff;
+	text-align: left;
+}
+.pic ul .one{
+	line-height: 56px;
+	position: absolute;
+	left: -1920px;
+	top:40px;
+	opacity: 0;
+	transition:all 2s ease-in 0s;
+}
+.pic ul .two{
+	line-height: 56px;
+	position: absolute;
+	left: 1920px;
+	top:40px;
+	opacity: 0;
+	transition:all 2s ease-in 0s;
+}
+body:hover.pic ul .one{
+	position: absolute;
+	left:100px;
+	top:40px;
+	opacity:0.8;
+}
+body:hover .pic ul .two{
+	position: absolute;
+	left:300px;
+	top:40px;
+	opacity:0.8;
+}
+ .pic ul .one span, .pic ul .two span{
+	float: left;
+	width:40px;
+	height: 40px;
+	text-align: center;
+	line-height: 40px;
+	border-radius: 20px;
+	margin:8px 10px 0 10px;
+	box-shadow: 0 0 0 1px #90c197 inset;
+	transition:box-shadow 0.3s ease 0s;
+	font-family: "freshskin";
+	font-weight: bold;
+	color:#90c197;
+}
+ .pic ul .two span{margin:8px 30px 0 10px;}
+
+ .pic ul .one:hover span, .pic ul .two:hover span{
+	box-shadow: 0 0 0 20px #90c197 inset;
+	color:#fff;
+} 
+    .new{
+	width:100%;
+	height:530px;
+	background: #fff;
+}
+.new header{
+	width:450px;
+	height: 95px;
+	background: #f7f7f7;
+	border-radius: 48px;
+	margin:70px auto 0;
+	box-sizing:border-box;
+	padding:2px 0 0 35px;
+}
+.new p{
+	margin-top: 20px;
+	text-align: center;
+	color:lightblue;
+}
+.new ul{
+	margin:50px auto 0;
+	width: 960px;
+}
+.new ul li{
+	width:266px;
+	height:220px;
+	border:1px solid #ccc; 
+	background:url(https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3168658332,3136536980&fm=15&gp=0.jpg) 0 0 no-repeat;
+	float: left;
+	margin-right:8%;
+	margin-bottom: 40px;
+	position: relative;
+	overflow: hidden;
+}
+.new ul li:nth-child(2){background-image: url(https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=208728701,3403422398&fm=15&gp=0.jpg);}
+.new ul li:nth-child(3){
+	margin-right: 0;
+	background-image: url(https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2942207890,763160070&fm=15&gp=0.jpg);
+}
+.new ul li hgroup{
+	position: absolute;
+	left:0;
+	top:-250px;
+	width:266px;
+	height:220px;
+	background: rgba(0,0,0,0.5);
+	transition:all 0.5s ease-in 0s;
+}
+.new ul li:hover hgroup{
+	position: absolute;
+	left:0;
+	top:0;
+}
+.new ul li hgroup h2:nth-child(1){
+	font-size: 22px;
+	text-align: center;
+	color:#fff;
+	font-weight: normal;
+	margin-top: 58px;
+}
+.new ul li hgroup h2:nth-child(2){
+	font-size: 14px;
+	text-align: center;
+	color:#fff;
+	font-weight: normal;
+	margin-top: 15px;
+}
+.new ul li hgroup h2:nth-child(3){
+	width:26px;
+	height: 26px;
+	margin-left: 120px;
+	margin-top: 15px;
+	background:url(../images/jiantou.png) 0 0 no-repeat;
+}
+.new ul li hgroup h2:nth-child(4){
+	width:75px;
+	height: 22px;
+	margin-left: 95px;
+	margin-top: 25px;
+	background:url(../images/anniu.png) 0 0 no-repeat;
+} 
+.try{
+	width:100%;
+	height:312px;
+	background: #83ba8b;
+	padding-top: 70px;
+    
+}
+.try header{
+	width:555px;
+	height: 95px;
+	background: #f7f7f7;
+	border-radius: 48px;
+	margin:0 auto;
+	box-sizing:border-box;
+	padding:7px 0 0 35px;
+}
+.try p{
+	margin-top: 10px;
+	text-align: center;
+	color: #fff;
+}
+.try ul{
+	margin:50px auto 0;
+	width: 960px;list-style: none;
+}
+.try ul li{
+	width:291px;
+	height:251px;
+	float: left;
+	margin-right:4%;
+	margin-bottom: 10px;
+	position: relative;
+	-webkit-perspective:230px;	
+}
+.try ul li:last-child{
+	margin-right: 0;
+}
+.try ul li img{
+	position: absolute;
+	left:0;
+	top:0;
+	-webkit-backface-visibility:hidden;
+	transition:all 0.5s ease-in 0s;
+}
+.try ul li img.fan{
+ 	-webkit-transform:rotateX(-160deg);
+ }
+.try ul li:hover img.fan{
+ 	-webkit-transform:rotateX(0deg);
+ }
+ .try ul li:hover img.zheng{
+ 	-webkit-transform:rotateX(160deg);
+ } 
+    .text{
+	width:100%;
+	/* height:700px; */
+	background: #fff;
+    }
+    .text header{
+	width:508px;
+	height: 95px;
+	background: #f7f7f7;
+	border-radius: 48px;
+	margin:220px auto 0;
+	box-sizing:border-box;
+	padding:7px 0 0 35px;
+    }
+    .text p{
+	margin-top: 10px;
+	text-align: center;
+	color: #db0067;
+    }
+    .text ul{
+	margin:70px auto 0;
+    width: 960px;
+    display: flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    }
+    .text ul li{
+	width:195px;
+	height:195px;
+	border:1px solid #ccc;;
+	border-radius: 50%;
+	/* float: left; */
+	margin-right:5%;
+	margin-bottom: 40px;
+	position: relative;
+    }
+    .text ul li img{
+	position: absolute;
+	top:50%;
+	left:50%;
+	transform:translate(-50%,-50%);
+    }
+    .text ul li:nth-child(4),.text ul li:nth-child(8){
+	margin-right:0;
+    }
+    .text ul li .tihuan{
+	opacity: 0;
+	transition:all 0.4s ease-in 0.2s;	
+    }
+    .text ul li:hover .tihuan{
+	opacity: 1;
+	transform:translate(-50%,-50%) scale(0.75);	
+    }
+    .text ul li .tu{
+	transition:all 0.4s ease-in 0s;
+    }
+    .text ul li:hover .tu{
+	opacity: 0;
+	transform:translate(-50%,-50%) scale(0.5);
+    }
+    footer{
+	width:100%;
+	height:440px;
+	background: #545861;
+	border-bottom: 1px solid #fff;
+}
+
+footer .logo{
+	width:1000px;
+	height:100px;
+	margin:0 auto;
+	background: url(images/logo1.jpg) no-repeat center;
+	border-bottom: 1px solid #8c9299;
+}
+
+footer .message{
+	width:1000px;
+	margin:20px auto 0;
+	color:#fffada;
+}
+footer .message .left{
+	width:525px;
+	float: left;
+	padding-left: 30px;
+	box-sizing:border-box;
+}
+footer .message .left li{
+	float: left;
+	margin-right: 30px;
+}
+footer .message .left li input{
+	width:215px;
+	height:32px;
+	border-radius: 5px;
+	margin:10px 0 15px 0;
+	padding-left: 10px;
+	box-sizing:border-box;
+	border:none;
+}
+footer .message .left li:last-child input{
+	width:120px;
+	height:39px;
+	padding-left: 0;
+	border:none;
+	background: url(images/but.jpg) no-repeat;
+	}
+footer .message .right{
+	float: left;
+}
+footer .message .right p{
+	margin-bottom: 10px;
+}
+footer .message .right textarea{
+	width:400px;
+	height:172px;
+	padding:10px;
+	box-sizing:border-box;
+	resize:none;
+}
+    .banquan{
+	width:100%;
+    height:60px;
+    margin-top: 1px;
+	background: #333;
+	text-align: center;
+    }
+    .banquan a{
+        text-decoration: none;
+        color: #999;
+        line-height: 60px;
+    }
+    .banquan a:hover{
+        color: #fff;
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="con">
+            <div class="left"></div>
+            <div class="right">
+                <a href="#">登陆&nbsp;&nbsp;</a>
+                <a href="#">注册</a>
+            </div>
+        </div>
+    </header>
+    <nav>
+            <ul>
+                <li class="left">
+                    <a class="one" href="#">
+                        <img src="images/sanxian.png" alt="">
+                        <span>选项</span>
+                        <img src="images/sanjiao.png" alt="">
+                    </a>
+                    <aside>
+                        <span></span>
+                        <ol class="zuo">
+                            <li class="con">护肤</li>
+                            <li>>洁面</li>
+                            <li>>爽肤水</li>
+                            <li>>精华</li>
+                            <li>>乳液</li>
+                            <li class="con">彩妆</li>
+                            <li>>BB霜</li>
+                            <li>>卸妆</li>
+                            <li>>粉底液</li>
+                            <li class="con">香氛</li>
+                            <li>>女士香水</li>
+                            <li>>男士香水</li>
+                            <li>>中性香水</li>					
+                        </ol>
+                        <ol class="you">
+                            <li class="con">男士专区</li>
+                            <li>>爽肤水</li>
+                            <li>>洁面</li>
+                            <li>>面霜</li>
+                            <li>>精华</li>
+                            <li class="con">热门搜索</li>
+                            <li>>洗面奶</li>
+                            <li>>去黑头</li>
+                            <li>>隔离</li>
+                            <li>>面膜</li>						
+                        </ol>
+                        <img src="images/tu1.jpg" alt="">
+                    </aside>
+                </li>
+                <li class="center">
+                    <form>
+                    <input type="text" value="请输入商品名称、品牌或编号">
+                    </form>
+                </li>
+                <li class="right">
+                    <a href="#">&#xe65e;</a>
+                    <a href="#">&#xe608;</a>
+                    <a href="#">&#xf012a;</a>
+                    <a href="#">&#xe68e;</a>
+                </li>
+            </ul>
+        </nav>
+        <video src="video/home_loop_720p.mp4" autoplay="ture" loop="ture" ></video>
+        <audio src="audio/home.ogg" autoplay="ture" loop="ture"></audio>
+        <div class="pic">
+            <p>Select the right resolution for your PC and dive in! （请为您的电脑选择正确的分辨率）</p>
+            <ul>
+                <li class="one"><span>&#xe662;</span>STANDARD标准</li>
+                <li class="two"><span>&#xe662;</span>HD高清</li>
+            </ul>
+        </div>
+    <div class="new">
+            <header>
+                <img src="images/ABD.jpg" alt="">
+            </header>
+            <p>天下美食 享之不尽 用之不绝 还在看啥 赶紧拿起手机订购呀</p>
+            <ul>
+                <li>
+                    <hgroup>
+                        <h2>菜品：五香驴肉</h2>
+                        <h2>菜肴/传统美食</h2>
+                        <h2></h2>
+                        <h2></h2>
+                    </hgroup>
+                </li>
+                <li>
+                    <hgroup>
+                        <h2>菜品：湘西富贵鸭</h2>
+                        <h2>菜肴/传统美食</h2>
+                        <h2></h2>
+                        <h2></h2>
+                    </hgroup>
+                </li>
+                <li>
+                    <hgroup>
+                        <h2>菜品：富贵海中鲜</h2>
+                        <h2>菜肴/传统美食</h2>
+                        <h2></h2>
+                        <h2></h2>
+                    </hgroup>
+                </li>
+            </ul>
+        </div>
+        <div class="try">
+                <header>
+                    <img src="images/shizhuang.jpg" alt="">
+                </header>
+                <p>美化容貌 增添自信 突出个性 </p>
+                <ul>
+                    <li>
+                        <img class="zheng" src="images/try1.jpg" alt="">
+                        <img class="fan" src="images/try4.jpg" alt="">
+                    </li>
+                    <li>
+                        <img class="zheng" src="images/try2.jpg" alt="">
+                        <img class="fan" src="images/try5.jpg" alt="">
+                    </li>
+                    <li>
+                        <img class="zheng" src="images/try3.jpg" alt="">
+                        <img class="fan" src="images/try6.jpg" alt="">
+                    </li>
+                </ul>
+            </div>
+    <div class="text">
+        <header>
+            <img src="images/cp.jpg" alt="">
+        </header>
+        <p>评测 我们更专业 用户更放心</p>
+        <ul>
+            <li>
+                <img  class="tu" src="images/cp1.jpg" alt="">
+                <img class="tihuan" src="images/th1.png" alt="">
+            </li>
+            <li>
+                <img class="tu" src="images/cp2.jpg" alt="">
+                <img class="tihuan" src="images/th2.png" alt="">
+            </li>
+            <li>
+                <img class="tu" src="images/cp3.jpg" alt="">
+                <img class="tihuan" src="images/th3.png" alt="">
+            </li>
+            <li>
+                <img class="tu" src="images/cp4.jpg" alt="">
+                <img class="tihuan" src="images/th4.png" alt="">
+            </li>
+            <li>
+                <img class="tu" src="images/cp5.jpg" alt="">
+                <img class="tihuan" src="images/th5.png" alt="">
+            </li>
+            <li>
+                <img class="tu" src="images/cp6.jpg" alt="">
+                <img class="tihuan" src="images/th6.png" alt="">
+            </li>
+            <li>
+                <img class="tu" src="images/cp7.jpg" alt="">
+                <img class="tihuan" src="images/th7.png" alt="">
+            </li>
+            <li>
+                <img class="tu" src="images/cp8.jpg" alt="">
+                <img class="tihuan" src="images/th8.png" alt="">
+            </li>
+        </ul>
+    </div>
+    <footer>
+            <div class="logo"></div>
+            <div class="message">
+                <form>
+                    <ul class="left">
+                        <li>
+                            <p><label for="">姓名：</label></p>
+                            <input type="text">
+                        </li>
+                        <li>
+                            <p>邮箱：</p>
+                            <input type="email">
+                        </li>
+                        <li>
+                            <p>电话：</p>
+                            <input type="tel"> 
+                        </li>
+                        <li>
+                            <p>密码：</p>
+                            <input type="password">
+                        </li>
+                        <li>
+                            <input class="but" type="submit" value="">
+                        </li>
+                    </ul>
+                    <div class="right">
+                        <p>留言：</p>
+                        <textarea></textarea>
+                    </div>
+                </form>
+            </div>
+        </footer>
+    <div class="banquan">
+        <a href="#">fresh skin 美肤科技有限公司</a>
+    </div>
+    <a href="../index.html">返回主页</a>
+</body>
+</html>
