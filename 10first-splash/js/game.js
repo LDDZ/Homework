@@ -82,7 +82,7 @@ function checkGuess() {
 }
 //确定按钮设置单击事件
 guessSubmit.addEventListener('click', checkGuess);
-// 按钮单击事件函数
+// 设置游戏结束状态
 function setGameOver() {
   guessField.disabled = true;
   guessSubmit.disabled = true;

@@ -17,6 +17,9 @@
         color: white;
         padding: 3px;
       }
+      div.resultParas p:last-child{
+        display: none;
+      }
     </style>
   </head>
   <body>
@@ -35,6 +38,7 @@
       <p class="guesses"></p> <!--猜数历史数据存放区-->
       <p class="lastResult"></p><!--猜对/错结论区-->
       <p class="lowOrHi"></p><!--猜高/低提示-->
+      <p><button>重新开始</button></p>
     </div>
     <!-- 结果呈现区结束 -->
     <!-- 重新游戏按钮由JS动态加入 -->
