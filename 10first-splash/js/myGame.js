@@ -2,9 +2,9 @@ var randomNumber=Math.floor(Math.random() * 100) + 1;
 console.log(randomNumber);
 
 var guessField=document.querySelector('.guessField');
-console.log(guessField);
+// console.log(guessField);
 var guesses = document.querySelector('.guesses');
-console.log(guesses);
+// console.log(guesses);
 var lastResult=document.querySelector('.lastResult');
 // console.log(lastResult);
 var lowOrHi=document.querySelector('.lowOrHi');
@@ -34,7 +34,7 @@ function checkGuess(){
     }else if(guessCount===10){
         lastResult.textContent='Game Over!!!';
         lowOrHi.textContent='';
-        setGameOver()
+        setGameOver();
     }else{
         lastResult.textContent='你猜错了！';
         lastResult.style.backgroundColor='red';
@@ -72,11 +72,13 @@ function setGameOver(){
     guessSubmit.disabled=true;
     // 创建button元素，button为HTML按钮的标签名
     resetButton=document.createElement('button');
+    // console.log(resetButton);
     // 为新生成的元素resetButton设置文本内容
-    resetButton=textContent="开始新游戏";
+    resetButton.textContent="开始新游戏";
     // 将resetButton作为body的小孩加入页面
+    // console.log(resetButton);
     document.body.appendChild(resetButton);
-    为resetButton设置单击事件监侦听器
+    // 为resetButton设置单击事件监侦听器
     resetButton.addEventListener('click',resetGame);
 }
 //重置游戏
@@ -97,4 +99,4 @@ function resetGame() {
     lastResult.style.backgroundColor = 'white';
     // 重置猜数值
     randomNumber = Math.floor(Math.random() * 100) + 1;
-  }
+}
