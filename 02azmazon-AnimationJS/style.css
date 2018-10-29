@@ -102,3 +102,21 @@ ul{
     font-weight: bold;
     overflow: hidden;
 }
+#images{
+    position: relative;
+}
+#images>a{
+    transition: opacity 1s linear;
+    /* display: block; */
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.displayImg{
+    /* display: block; */
+    opacity: 1;
+}
+.hiddenImg{
+    /* display: none; */
+    opacity: 0;
+}

@@ -7,9 +7,12 @@ function startTimer(speed) {
 //调节定时器，使程序一开始就执行变化
 startTimer(1000);
 
-//获取h2元素
-var h2Obj = document.querySelector('h2');
-console.log(h2Obj);
+//获取div#images元素
+var images1 = document.querySelector('#images');
+var images2 = document.getElementById('images');
+console.log(images1);
+console.log(images2);
+console.log(images2.children[3]);
 
 //设置当前变化的号码变量及初值
 var currentNo = 1;
