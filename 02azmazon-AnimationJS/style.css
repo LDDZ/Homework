@@ -164,16 +164,19 @@ ul{
 .info:hover{
     height: 40px;
 }
-.info li{
+.txtItem{
     width: 12.5%;
     background-color: rgba(0, 0, 0, 0.5);
     margin-right: 2px;
     color: #fff;
     text-align: center;
 }
-.info li:hover{
-    background-color: rgba(252, 166, 5, 0.781)
+.info li:hover,.info .heighlight{
+    background-color: rgb(252, 166, 5);
 }
 .info:last-child{
     margin: 0px;
+}
+.info .normalColor{
+    background-color: rgba(0, 0, 0, 0.5);
 }
