@@ -37,35 +37,25 @@ function changeImg(){
         // console.log(imagesA[i]);
 
     }
-
-
-    //或者
-    // for(const item of imagesA){
-    //     item.className="hiddenImg";
-    // }
-
     // 排他原理2，再突出自己，当前图像透明度为1
     imagesA[currentNo].className="displayImg";
     // 排他原理，文本高亮
     infoList[currentNo].className="txtItem heighlight"
 
-    if(currentNo<7) {currentNo++;}
-    else {currentNo=0;}
-    // console.log(currentNo);
 }
 
 function leftImg(){
     if(currentNo>0) {currentNo--;}
     else {currentNo=7;}
 }
-function righImg(){
+function rightImg(){
     if(currentNo<7) {currentNo++;}
     else {currentNo=0;}
 }
 
 
 //网页加载后启动计时器，每隔一秒调用changeImg()换片
-var timer = window.setInterval(changeImg, 1000);
+var timer = window.setInterval(rightImgGo, 1000);
 
 //抓取整个轮播图div
 var sliderDiv=document.querySelector('.slider');
@@ -73,7 +63,7 @@ var sliderDiv=document.querySelector('.slider');
 
 //定义启动定时器函数，函数功能为启动定时器
 function starChange() {
-    timer = window.setInterval(changeImg, 1000);
+    timer = window.setInterval(rightImgGo, 1000);
 }
 
 //定义停止定时器函数，函数功能为停止定时器
@@ -95,7 +85,7 @@ for(var i=0;i<infoList.length;i++){
 
 function gotoImg(){
     // 获得当前显示的图像的编号/文本的编号 this 是当前时间发生的本体
-    console.log(this.no);
+    // console.log(this.no);
     currentNo=this.no;
     // 调用更换图片/文本函数
     changeImg();
@@ -105,6 +95,14 @@ var leftBtn =document.querySelector('.leftButton');
 var rightBtn=document.querySelector('.rightButton');
 // console.log(rightBtn);
 
-leftBtn.addEventListener('click',leftImg);
-rightBtn.addEventListener('click',righImg);
+leftBtn.addEventListener('click',leftImgGo);
+rightBtn.addEventListener('click',rightImgGo);
 
+function leftImgGo(){
+    leftImg();
+    changeImg();
+}
+function rightImgGo(){
+    rightImg();
+    changeImg();
+}
