@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Random color example — event handler property</title>
+    <style>
+      button {
+        margin: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <button>Change color</button>
+    <script>
+      var btn = document.querySelector('button');
+
+      function random(number) {
+        return Math.floor(Math.random()*number);
+      }
+
+      // function bgChange() {
+      //   var rndCol = 'rgb(' + random(255) + ',' + random(255) + ',' + random(255) + ')';
+      //   document.body.style.backgroundColor = rndCol;
+      // }
+       
+      // 函数调用  函数名
+      // bgChange();
+
+
+       // 匿名函数
+       // function(){函数体}
+      //  var myChange= function(){
+      //   var rndCol = 'rgb(' + random(255) + ',' + random(255) + ',' + random(255) + ')';
+      //   document.body.style.backgroundColor = rndCol;
+      //  }
+      //  console.log(myChange);
+
+
+
+
+      // 注册单击事件，事件发生时调用函数，格式要求函数名
+      // btn.onclick = myChange;
+      
+      // 注册单击事件，事件发生时调用函数，格式要求函数名
+      // btn.onclick=function(){
+      //   var rndCol = 'rgb(' + random(255) + ',' + random(255) + ',' + random(255) + ')';
+      //   document.body.style.backgroundColor = rndCol;
+      //  }
+      
+      // 侦听器
+      // btn.addEventListener('mouseover',function(){
+      //   var rndCol = 'rgb(' + random(255) + ',' + random(255) + ',' + random(255) + ')';
+      //   document.body.style.backgroundColor = rndCol;
+      //  })
+
+      // var timer = window.setInterval(myChange, 1000);
+
+      // 计时器 函数名
+      // var timer = window.setInterval(bgChange, 1000);
+      // 计时器 匿名函数
+      var timer = window.setInterval(function(){
+        var rndCol = 'rgb(' + random(255) + ',' + random(255) + ',' + random(255) + ')';
+        document.body.style.backgroundColor = rndCol;
+       }, 1000);
+
+
+      // btn.addEventListener('mouseover',function)
+
+
+
+      // btn.onfocus及btn.onblur — 颜色将于按钮被置于焦点或解除焦点时改变
+      // （尝试使用Tab移动至按钮上，然后再移开）。
+      // 这些通常用于显示有关如何在置于焦点时填写表单字段的信息，或者如果表单字段刚刚填入不正确的值，则显示错误消息。
+
+      // btn.ondblclick — 颜色将仅于按钮被双击时改变。
+      // window.onkeypress, window.onkeydown, window.onkeyup — 当按钮被按下时颜色会发生改变.
+      //  keypress 指的是通俗意义上的按下按钮 (按下并松开),
+      //  而 keydown 和 keyup 指的是按键动作的一部分,分别指按下和松开.
+      //  注意如果你将事件处理器添加到按钮本身，它将不会工作 — 只能将它添加到代表整个浏览器窗口的 window对象中。
+      // btn.onmouseover 和 btn.onmouseout — 颜色将会在鼠标移入按钮上方时发生改变, 或者当它从按钮移出时.
+    </script>
+  </body>
+</html>
