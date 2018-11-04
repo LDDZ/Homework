@@ -102,6 +102,16 @@ ul{
     font-weight: bold;
     overflow: hidden;
 }
+
+
+.slider{
+    width: 1500px;
+    height: 300px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
 /* #images{
     position: relative;
 } */
@@ -120,13 +130,7 @@ ul{
     /* display: none; */
     opacity: 0;
 }
-.slider{
-    width: 1500px;
-    height: 300px;
-    margin: 0 auto;
-    position: relative;
-    overflow: hidden;
-}
+
 .slider img{
     /* display: block; */
     width: 1500px;
