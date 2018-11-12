@@ -39,6 +39,7 @@
       background-color: red;
       border-color: red;
       }
+    
     </style>
 </head>
 
@@ -54,7 +55,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <a class="nav-link" href="#">购物车<span class="badge badge-pill badge-danger"  name="totalQty">0</span></a>
+            <a class="nav-link" href="#">购物车<span class="badge badge-pill badge-danger"  name="totalQty"   id='num'>0</span></a>
           </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
@@ -76,6 +77,25 @@
             <div class="d-flex justify-content-between align-items-center">
               <div class="btn-group">
                 <button type="button" class="btn btn-sm btn-outline-secondary" name='increase'>+</button>
+                <button type="button" class="btn btn-sm btn-outline-secondary " disabled='disabled' name='qty' >0</button>
+                <button type="button" class="btn btn-sm btn-outline-secondary" name='decrease'>-</button>
+                <button type="button" class="btn btn-sm btn-outline-secondary" name='addToCart'>加入购物车</button>
+              </div>
+              <small class="text-muted" name='unitPrice'>999.00</small>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card mb-4 shadow-sm">
+          <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail"
+            alt="缩略图[100％x225]" style="height: 225px; width: 100%; display: block;" src="images/commodity_02.jpg"
+            data-holder-rendered="true">
+          <div class="card-body">
+            <p class="card-text">鞋鞋鞋鞋</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                <button type="button" class="btn btn-sm btn-outline-secondary" name='increase' id='increase'>+</button>
                 <button type="button" class="btn btn-sm btn-outline-secondary " disabled='disabled' name='qty'>0</button>
                 <button type="button" class="btn btn-sm btn-outline-secondary" name='decrease'>-</button>
                 <button type="button" class="btn btn-sm btn-outline-secondary" name='addToCart'>加入购物车</button>
@@ -94,26 +114,7 @@
             <p class="card-text">鞋鞋鞋鞋</p>
             <div class="d-flex justify-content-between align-items-center">
               <div class="btn-group">
-                <button type="button" class="btn btn-sm btn-outline-secondary" name='increase'>+</button>
-                <button type="button" class="btn btn-sm btn-outline-secondary " disabled='disabled' name='qty'>0</button>
-                <button type="button" class="btn btn-sm btn-outline-secondary" name='decrease'>-</button>
-                <button type="button" class="btn btn-sm btn-outline-secondary" name='addToCart'>加入购物车</button>
-              </div>
-              <small class="text-muted" name='unitPrice'>999.00</small>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="card mb-4 shadow-sm">
-          <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail"
-            alt="缩略图[100％x225]" style="height: 225px; width: 100%; display: block;" src="images/commodity_02.jpg"
-            data-holder-rendered="true">
-          <div class="card-body">
-            <p class="card-text">鞋鞋鞋鞋</p>
-            <div class="d-flex justify-content-between align-items-center">
-              <div class="btn-group">
-                <button type="button" class="btn btn-sm btn-outline-secondary" name='increase'>+</button>
+                <button type="button" class="btn btn-sm btn-outline-secondary" name='increase'  id='increase'>+</button>
                 <button type="button" class="btn btn-sm btn-outline-secondary " disabled='disabled' name='qty'>0</button>
                 <button type="button" class="btn btn-sm btn-outline-secondary" name='decrease'>-</button>
                 <button type="button" class="btn btn-sm btn-outline-secondary" name='addToCart'>加入购物车</button>
@@ -145,6 +146,18 @@
     </div>
   </div>
   <script src="main.js"></script>
+  <!-- <script>
+    var num=document.getElementById('num');
+    console.log(num);
+    var qty=document.getElementsByName('totalQty')[0];
+    console.log(qty);
+    var num2=document.querySelector('.badge-pill');
+    console.log(num2);
+    var num3=document.getElementsByClassName('badge-pill')[0];
+    console.log(num3);
+    var num4=document.getElementsByTagName('span')[1];
+    console.log(num4);
+  </script> -->
 </body>
 
 </html>
