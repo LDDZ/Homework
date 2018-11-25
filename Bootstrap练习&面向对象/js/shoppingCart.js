@@ -38,7 +38,7 @@ class CartData {
     this.orderList = new Array();
     this.units = 0;
     this.totalQty = 0;
-    this.totaAmount = 0;
+    this.totalAmount = 0;
   }
 }
 
@@ -64,7 +64,7 @@ class ShoppingCart {
   // 加入购物车(写入localStorage)
   addToCart(order) {
     // 读取本地存储中的购物车数据
-    this.getDataFromLocalSatorge();
+    let cartData = this.getDataFromLocalSatorge();
     var flag = true; //假设当前状态是新商品
     for (var i = 0; i < cartData.orderList.length; i++) {
       if (order.id == cartData.orderList[i].id) {
@@ -80,38 +80,76 @@ class ShoppingCart {
     }
 
     cartData.totalQty += order.qty;
-    cartData.totaAmount += order.unitPrice * order.qty;
+    cartData.totalAmount += order.unitPrice * order.qty;
     // 将新购物车数据写入本地存储
-    this. setDataToLocalSatorge(cartData);
+    this.setDataToLocalSatorge(cartData);
   }
-}
+  // 获取商品列表
+  getSelectedProductList() {
+    let cartData = this.getDataFromLocalSatorge();
+  }
+  // 获取选中商品的总数量
+  getSelectedQty() {
+    // 定义选中商品总数量变量
+    let selectQty = 0;
+    let cartData = this.getDataFromLocalSatorge();
+    for (let i = 0; i < cartData.orderList.length; i++) {
+      if (cartData.orderList[i].selectStatus) {
+        selectQty += cartData.orderList[i].qty;
+      }
+    }
+    return selectQty;
+  }
+  // 获取选中商品的总价格
+  getSelectedAmount() {
+    // 定义选中商品总价格变量
+    let selectAmount = 0;
+    let cartData = this.getDataFromLocalSatorge();
+    for (let i = 0; i < cartData.orderList.length; i++) {
+      if (cartData.orderList[i].selectStatus) {
+        selectAmount += cartData.orderList[i].unitPrice * cartData.orderList[i].qty;
+      }
+    }
+    return selectAmount;
+  }
+  // 设置购物订单项选择状态
+  setSelectStatus(id){
+    let cartData = this.getDataFromLocalSatorge();
+    for (let i = 0; i < cartData.orderList.length; i++) {
+      if (id == cartData.orderList[i].id) {
+        cartData.orderList[i].selectStatus=!cartData.orderList[i].selectStatus;
+        return cartData.orderList[i].selectStatus;
+      }
+    }
+    return "无此ID";
+  }
 
-
-
-
-
-
-
-
-
-
-// 函数定义---将某个订单加入购物车
-function addToCart(order) {
-  cartData=this.getDataFromLocalSatorge();
-  var flag = true; //假设当前状态是新商品
-  for (var i = 0; i < myCart.orderList.length; i++) {
-    if (order.id == myCart.orderList[i].id) {
-      flag = false; // 修改状态，是老商品
-      myCart.orderList[i].qty += order.qty;
-      break;
+  // 删除某个指定（id）订单
+  deleteAnOrder(id){
+    let cartData = this.getDataFromLocalSatorge();
+    for (let i = 0; i < cartData.orderList.length; i++) {
+      if (id == cartData.orderList[i].id) {
+        localStorage.removeItem('cartData.orderList[i]');
+        return cartData.orderList[i];
+      }
+    }
+    return "删除失败"
+  }
+  // 某个指定订单数量减1
+  AnOrderAdd(id){
+    let cartData = this.getDataFromLocalSatorge();
+    for (let i = 0; i < cartData.orderList.length; i++) {
+      if (id == cartData.orderList[i].id) {
+        cartData.orderList[i].qty--;
+        return cartData.orderList[i].qty;
+      }
     }
   }
-  if (flag) {
-    // order是购物车中的新商品，给样本数++
-    myCart.orderList.push(order);
-    myCart.units++;
-  }
+  // 某个指定订单数量加1
 
-  myCart.totalQty += order.qty;
-  myCart.totaAmount += order.unitPrice * order.qty;
+  // 清空购物车（移除本地存储购物车项）
+  clearShoppingCart() {
+    // localStorage.clear('test');
+    localStorage.removeItem('test');
+  }
 }
