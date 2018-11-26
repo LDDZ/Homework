@@ -40,12 +40,18 @@
         // 购物车数据
         var cartData = new CartData();
 
-        console.log(cart.getDataFromLocalSatorge());
+        // console.log(cart.getDataFromLocalSatorge());
         console.log(cart.getSelectedQty());
         console.log(cart.getSelectedAmount());
-        console.log(cart.setSelectStatus("0"));
-        console.log(cart.deleteAnOrder("03"));
-        console.log(cart.AnOrderAdd("03"));
+
+        cart.setItemSelectStatus('04',false);
+        
+        console.log(cart.getSelectedQty());
+        console.log(cart.getSelectedAmount());
+
+        
+        cart.deleteItem('03');
+        cart.AnOrderAdd("05",'-');
     </script>
 </body>
 
