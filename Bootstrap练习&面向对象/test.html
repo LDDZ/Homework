@@ -10,6 +10,7 @@
 
 <body>
     <script src="js/shoppingCart.js"></script>
+    
     <script>
         // 创建购物车操作类对象
         var cart = new ShoppingCart();
@@ -17,21 +18,21 @@
         cart.clearShoppingCart();
         
         // 创建一个商品
-        var p = new Product('03', 'T恤', 54.00, 'images/01.jpg');
+        var p = new Product('03', 'T恤', 54.00, 'images/commodity_03.jpg');
         // 创建一个订单
         var order = new Order(p, 1, true);
         // 将订单置入购物车
         cart.addToCart(order);
 
         // 又创建2个商品
-        p = new Product('04', '苹果', 20.00, 'images/01.jpg');
+        p = new Product('04', '苹果', 20.00, 'images/commodity_04.jpg');
         // 又创建2个订单
         order = new Order(p, 2, true);
         // 将订单置入购物车
         cart.addToCart(order);
 
         // 又创建3个商品
-        p = new Product('05', '牛奶', 10.00, 'images/01.jpg');
+        p = new Product('05', '牛奶', 10.00, 'images/commodity_05.jpg');
         // 又创建3个订单
         order = new Order(p, 1, false);
         // 将订单置入购物车
@@ -50,8 +51,9 @@
         console.log(cart.getSelectedAmount());
 
         
-        cart.deleteItem('03');
-        cart.AnOrderAdd("05",'-');
+        // cart.deleteItem('03');
+        cart.AnOrderAdd("04",'+');
+        // cart.AnOrderAdd("05",'-');
     </script>
 </body>
 

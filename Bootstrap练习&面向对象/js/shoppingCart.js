@@ -87,6 +87,8 @@ class ShoppingCart {
   // 获取商品列表
   getSelectedProductList() {
     let cartData = this.getDataFromLocalSatorge();
+    let list=cartData.orderList;
+    return list;
   }
   // 获取选中商品的总数量
   getSelectedQty() {
