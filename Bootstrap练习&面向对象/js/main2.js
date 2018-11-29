@@ -1,7 +1,7 @@
 // 获取所有按钮
 // var btnList=document.querySelectorAll('.btn-group .btn');
-var increase=document.getElementsByName('increase');
-// console.log(increase);
+var increase=document.querySelectorAll('[data-operator="increase"]');
+console.log(increase);
 var decrease=document.getElementsByName('decrease');
 var addToCart=document.getElementsByName('addToCart');
 
