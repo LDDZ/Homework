@@ -90,6 +90,15 @@ function regEvent() {
     console.log(element);
     // 注册单机事件,事件触发函数
     element.onclick = clearAllEventFun;
+
+    // 获取一组单项订单删除节点
+    element = document.querySelectorAll('[data-operator="deleteItem"]');
+    console.log(element);
+    // 为每个删除节点注册单机事件,事件触发函数
+    for (const i in element) {
+        element[i].onclick = deleteItemEventFun;
+    }
+    
 }
 
 // 清空事件触发函数
@@ -107,8 +116,18 @@ function clearAllEventFun() {
     displaySelectedTotal();
 }
 
-//删除事件触发函数
+//删除单项订单事件触发函数
 function deleteItemEventFun() {
+    // 获取订单根节点
+    let cartListNode =document.querySelector('#cartList');
+    // 获取当前订单节点
+    let node=this.parentNode.parentNode;
+    // 调用购物车类删除订单函数
+    cart.deleteItem(node.id);
+    // 删除节点
+    cartListNode.removeChild(node);
+    // 修改各种总数据
+    displaySelectedTotal();
 }
 
 // 初始化函数

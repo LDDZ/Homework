@@ -34,7 +34,7 @@
         // 又创建3个商品
         p = new Product('05', '牛奶', 10.00, 'images/commodity_05.jpg');
         // 又创建3个订单
-        order = new Order(p, 1, false);
+        order = new Order(p, 1, true);
         // 将订单置入购物车
         cart.addToCart(order);
 
@@ -45,7 +45,7 @@
         console.log(cart.getSelectedQty());
         console.log(cart.getSelectedAmount());
 
-        cart.setItemSelectStatus('04',false);
+        // cart.setItemSelectStatus('04',false);
         
         console.log(cart.getSelectedQty());
         console.log(cart.getSelectedAmount());
