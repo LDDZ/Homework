@@ -133,7 +133,6 @@ class ShoppingCart {
     let cartData = this.getDataFromLocalSatorge();
     for (let i = 0; i < cartData.orderList.length; i++) {
       if (id == cartData.orderList[i].id) {
-        console.log('要删除的订单下标为：' + i);
         // 变更总商品总件数
         cartData.totalQty -= cartData.orderList[i].qty;
         //变更商品总价格
@@ -147,8 +146,8 @@ class ShoppingCart {
     }
     this.setDataToLocalSatorge(cartData);
   }
-  // 某个指定订单数量加1/减1
-  AnOrderAdd(id, a) {
+  // 指定某个订单数量加1/减1
+  AnOrderAddOrMinus(id, a) {
     let cartData = this.getDataFromLocalSatorge();
     for (let i = 0; i < cartData.orderList.length; i++) {
       if (id == cartData.orderList[i].id) {
