@@ -16,7 +16,7 @@ function displayOrderList() {
     let cartData = cart.getDataFromLocalSatorge();
     //获取订单列表数据
     let orderList = cartData.orderList;
-    if (orderList.length == 0);
+    // if (orderList.length == 0);
 
     for (const i in orderList) {
         // 当前订单数据
