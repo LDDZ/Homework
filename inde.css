@@ -1,0 +1,19 @@
+/* 修改浏览器默认样式 */
+html, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td, em, button {
+    margin: 0;
+    padding: 0;
+}
+ul{
+    list-style: none;
+}
+/* 设置通用样式 */
+body{
+    /* background: #0e0e0e; */
+    /* color: #fff; */
+}
+
+.wrapper{
+    width: 100%;
+    height: 40px;
+    background: #000;
+}
