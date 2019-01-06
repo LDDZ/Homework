@@ -8,12 +8,61 @@ ul{
 }
 /* 设置通用样式 */
 body{
-    /* background: #0e0e0e; */
-    /* color: #fff; */
+    background: #000;
+    color: #fff;
+}
+a{
+    text-decoration: none;
+    color: #fff;
 }
 
 .wrapper{
+    display: flex;
+    justify-content:space-around;  
+    align-items:center;
+    width: 100%;
+    height: 60px;
+    background: #24292e;
+}
+.wrapper-title{
+    color: #fff;
+}
+.content{
+    display:flex;
+    margin:24px auto;  
+    padding: 16px; 
+    width:1000px;  
+}
+.github-div{
+    padding-right: 16px;
+}
+.github-name{
+    margin: 16px 0;
+    height: 40px;
+    line-height: 40px;
+    font-size: 30px;
+}
+
+.github-link{
+    display:block;
     width: 100%;
     height: 40px;
-    background: #000;
+    line-height: 40px;
+    text-align: center;
+    border: 1px #fff solid;
+    border-radius: 5px;
+}
+.homework{
+
+}
+.homework-project{
+    display:block;
+    margin-bottom: 16px;
+    padding: 16px;
+    width: 300px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    border: 1px #fff solid;
+    border-radius: 5px;
 }
